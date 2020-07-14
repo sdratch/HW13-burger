@@ -1,5 +1,5 @@
 $(function () {
-  $("#new-burger-btn").on("click", (event) => {
+  $("#new-burger-btn").on("click", function (event) {
     event.preventDefault();
     const newBurger = {
       name: $("#new-burger").val().trim(),
@@ -7,27 +7,25 @@ $(function () {
     $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger,
-    }).then( () =>{
+    }).then(() => {
       location.reload();
     });
   });
-  $(".devour-burger").on("click", (event)=>{
-    const id = $(this).data("id");
-    const name = $(this).data("name")
+
+  $(".devour-burger").on("click", function (event) {
+    event.preventDefault();
+    var id = $(this).data("id");
+    console.log(id);
     const devouredBurger = {
-        name:name
-    }
+      devour: true,
+    };
 
-    $.ajax("/api/burger/" + id, {
-        type: "PUT",
-        data: devouredBurger
-      }).then(
-        () =>{
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-  })
-
-
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: devouredBurger,
+    }).then(() => {
+      // Reload the page to get the updated list
+      location.reload();
+    });
+  });
 });

@@ -2,7 +2,7 @@ const orm = require("../config/orm.js");
 
 const burger = {
   all: function (cb) {
-    onm.selectall("burgers", (res) => {
+    orm.selectall("burgers", (res) => {
       cb(res);
     });
   },
@@ -12,7 +12,8 @@ const burger = {
     });
   },
   update: function (devoured, id, cb) {
-    orm.update("burgers", "devoured", devoured, id, (res) => {
+    console.log("models updating " + devoured)
+    orm.updateOne("burgers", "devoured", devoured, id, (res) => {
       cb(res);
     });
   },
