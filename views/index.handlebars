@@ -1,26 +1,25 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <ul>
+            <h2>NOT EATEN</h2>
+            <ul class="list-group">
                 {{#each burger}}
                 {{#unless devoured}}
-                <li class="list-group-item">{{burger_name}}
+                <li class="list-group-item">id {{id}}: {{burger_name}}
                     <button type="button" data-id="{{id}}"class="btn btn-secondary float-right devour-burger">
                         devour
                     </button>
                 </li>
-                
-
                 {{/unless}}
                 {{/each}}
             </ul>
         </div>
         <div class="col">
+            <h2>EATEN</h2>
             <ul class="list-group">
                 {{#each burger}}
                 {{#if devoured}}
-                <li class="list-group-item">
-                    {{burger_name}}
+                <li class="list-group-item">id {{id}}: {{burger_name}}
                 </li>
                 {{/if}}
                 {{/each}}

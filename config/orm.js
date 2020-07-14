@@ -25,8 +25,6 @@ const orm = {
     let queryString = `UPDATE  ${table}
    SET  ${col} = ${val}
     WHERE id = ?;`;
-    console.log(queryString)
-    console.log(loc)
     connection.query(queryString, [loc], (err, result) => {
       if (err) {
         throw err;

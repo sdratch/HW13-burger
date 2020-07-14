@@ -17,7 +17,6 @@ router.post("/api/burgers", (req, res) => {
   });
 });
 router.put("/api/burgers/:id", (req, res) => {
-  console.log("controller updating " + req.body.devour)
   burger.update(req.body.devour, req.params.id, (result) => {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404

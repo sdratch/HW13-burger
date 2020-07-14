@@ -12,7 +12,6 @@ const burger = {
     });
   },
   update: function (devoured, id, cb) {
-    console.log("models updating " + devoured)
     orm.updateOne("burgers", "devoured", devoured, id, (res) => {
       cb(res);
     });
