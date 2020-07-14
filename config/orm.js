@@ -21,7 +21,7 @@ const orm = {
       cb(result);
     });
   },
-  updateOne: function (table, col, val, loc) {
+  updateOne: function (table, col, val, loc,cb) {
     let queryString = `UPDATE  ${table}
    SET  ${col} = ${val}
     WHERE id = ?;`;
