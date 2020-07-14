@@ -1,2 +1,2 @@
-insert into burgers(burger_name,devoured)
-VAlues("Chicken Sandwhich",false),("Bacon",false),("Whopper",false);
+insert into burgers(burger_name)
+VAlues("Chicken Sandwhich"),("Bacon"),("Whopper");

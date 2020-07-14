@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <ul class="list-group">
+                {{#each cats}}
+                {{#unless sleepy}}
+                <li class="list-group-item">
+                    cat<button type="button" class="btn btn-secondary float-right">
+                        Primary
+                    </button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col">
+            <ul class="list-group">
+                {{#each cats}}
+                {{#unless sleepy}}
+                <li class="list-group-item">
+                    cat<button type="button" class="btn btn-secondary float-right">
+                        Primary
+                    </button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <form class="input-group mb-3 w-50 p-3 mx-auto">
+            <textarea class="form-control" id="new-burger" rows="3"></textarea>
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="">Button</button>
+            </div>
+    </div>
+    </form>
+</div>
