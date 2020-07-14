@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 const burger = require("../models/burger.js");
 
+//route for getting the database of burgers
 router.get("/", (req, res) => {
   burger.all((data) => {
+    //sending the burger data to the index handlebar
     let borgerobj = {
       burger: data,
     };
@@ -11,11 +13,14 @@ router.get("/", (req, res) => {
   });
 });
 
+//route for adding a new burger
 router.post("/api/burgers", (req, res) => {
+  //insert the name and send the new id
   burger.insert(req.body.name, (data) => {
     res.json({ id: data.insertId });
   });
 });
+//route for updating the burgers devour state
 router.put("/api/burgers/:id", (req, res) => {
   burger.update(req.body.devour, req.params.id, (result) => {
     if (result.changedRows == 0) {

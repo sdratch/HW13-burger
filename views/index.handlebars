@@ -1,8 +1,11 @@
+{{!-- constainer for the html --}}
 <div class="container">
     <div class="row">
         <div class="col">
+            {{!-- column for non eaten burgers --}}
             <h2>NOT EATEN</h2>
             <ul class="list-group">
+                {{!-- adds the burger if it has not been devoured --}}
                 {{#each burger}}
                 {{#unless devoured}}
                 <li class="list-group-item">id {{id}}: {{burger_name}}
@@ -15,8 +18,10 @@
             </ul>
         </div>
         <div class="col">
+            {{!-- column for eaten burgers --}}
             <h2>EATEN</h2>
             <ul class="list-group">
+                {{!-- adds the burger if it has been devoured --}}
                 {{#each burger}}
                 {{#if devoured}}
                 <li class="list-group-item">id {{id}}: {{burger_name}}
@@ -26,6 +31,7 @@
             </ul>
         </div>
     </div>
+    {{!-- Form for adding a new burger --}}
     <div class="row">
         <form class="input-group mb-3 w-50 p-3 mx-auto">
             <textarea class="form-control" id="new-burger" rows="3"></textarea>
